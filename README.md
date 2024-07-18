@@ -1,4 +1,5 @@
 Project Overview
+
 This project consists of several tasks designed to demonstrate various aspects of DevOps, including REST API creation, Dockerization, Kubernetes deployment, and cloud architecture design. Below is a summary of each task and the corresponding implementation.
 
 Tasks
