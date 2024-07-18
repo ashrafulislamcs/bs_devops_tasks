@@ -24,21 +24,38 @@ The architecture utilizes multiple AWS services to ensure global scalability, hi
 
 Key Components
 User: The end-users accessing the e-commerce platform from around the world.
+
 Route 53: Managed DNS service for routing traffic to the closest region.
+
 Global Accelerator: Ensures low latency by routing user requests to the nearest available region.
+
 CDN (CloudFront): Delivers static content to users globally with low latency.
+
 WAF (Web Application Firewall): Protects the application from common web exploits.
+
 Kubernetes Ingress (k8-ingress): Manages external access to services in the EKS cluster.
+
 ALB (Application Load Balancer): Distributes incoming application traffic across multiple targets in multiple Availability Zones.
+
 Multi-region Deployment: Ensures high availability and disaster recovery by deploying the application in two regions.
+
 EKS (Elastic Kubernetes Service): Orchestrates containerized applications.
+
 SQS (Simple Queue Service): Decouples microservices and manages background jobs.
+
 SNS (Simple Notification Service): Sends notifications from the application to users or other services.
+
 Lambda: Executes code in response to events (e.g., processing background tasks).
+
 RDS (Relational Database Service): Manages relational databases with read replicas for high availability.
+
 DynamoDB: Provides a NoSQL database with global table replication for low latency.
+
 ElastiCache: Caches frequently accessed data to improve read performance.
+
 Global DynamoDB Table Replication: Ensures low-latency read and write operations by replicating tables across regions.
+
+
 Architecture Diagram
 The architecture diagram is located in the diagram directory in this repository.
 
@@ -77,6 +94,6 @@ Integrate SQS, SNS, and Lambda:
 Configure SQS for message queuing.
 Set up SNS for notifications.
 Deploy Lambda functions for background job processing.
-Conclusion
-This architecture ensures that the e-commerce application can handle millions of requests with high availability and low latency. The use of multiple AWS services helps in scaling the application globally while maintaining cost efficiency.
+
+Conclusion: This architecture ensures that the e-commerce application can handle millions of requests with high availability and low latency. The use of multiple AWS services helps in scaling the application globally while maintaining cost efficiency.
 
