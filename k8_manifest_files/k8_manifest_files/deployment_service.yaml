@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+        - name: test-container
+          image: ashrafulislamcs/bs-task-1:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: WEATHER_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: weather-api-secret
+                  key: api-key
+            - name: WEATHER_API_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: weather-api-config
+                  key: api-url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-service
+spec:
+  selector:
+    app: test
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3033
+  type: LoadBalancer

@@ -1,0 +1,12 @@
+variable "prefix" {}
+variable "aws_region" {}
+variable "backend_host" {}
+variable "namespace" {}
+variable "aurora_cluster_endpoint" {}
+variable "aurora_cluster_read_endpoint" {}
+variable "redis_cluster_address" {}
+variable "eks_cluster_endpoint" {}
+variable "eks_cluster_certificate_authority_data" {}
+variable "eks_cluster_id" {}
+variable "alb_certificate_arn" {}
+variable "domain_name" {}
